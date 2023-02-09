@@ -98,7 +98,7 @@ RUN git clone https://github.com/tfutils/tfenv.git ~/.tfenv \
     && curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - \
     && sudo yum install -y nodejs \
     # install yarn.
-    && curl -o- -L https://yarnpkg.com/install.sh | sudo bash - \
+    && npm install -g yarn \
     # install Rails.
     && gem install nokogiri -v ${NOKOGIRI_VERSION} \
     && gem install rails -v ${RAILS_VERSION} \

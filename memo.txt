@@ -3,7 +3,7 @@ ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
 
 username:~/environment $ wget https://wals.s3.ap-northeast-1.amazonaws.com/curriculum/rails/environment.sh 
 
-```
+```オリジナル
 #!/bin/sh
 
 # Railsをインストール
@@ -33,5 +33,12 @@ sudo make install
 gem pristine --all
 gem install sqlite3 -- --with-sqlite3-include=/opt/sqlite/sqlite3/include --with-sqlite3-lib=/opt/sqlite/sqlite3/lib
 echo 'export LD_LIBRARY_PATH="/opt/sqlite/sqlite3/lib"' >> ~/.bash_profile
-
 ```
+
+git clone https://github.com/TakanoriShima/rails6-meshiterro-complete.git meshiterro
+cd meshiterro
+bundle install
+rm -rf config/credentials.yml.enc
+EDITOR=vim bin/rails credentials:edit
+rails db:migrate
+rails s -p 80
