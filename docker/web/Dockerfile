@@ -14,7 +14,8 @@ LABEL maintainer="<infratop>" \
 # set package version.
 ENV RUBY_VERSION="3.1.2" \
     RAILS_VERSION="6.1.4" \
-    NOKOGIRI_VERSION="1.13.10" \
+    NOKOGIRI_VERSION="1.14.1" \
+    YARN_VERSION="1.22.11" \
     PYTHON_VERSION="3.9.10" \
     TERRAFORM_VERSION="1.1.5" \
     ANSIBLE_VERSION="2.9.0" \
@@ -98,7 +99,13 @@ RUN git clone https://github.com/tfutils/tfenv.git ~/.tfenv \
     && curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - \
     && sudo yum install -y nodejs \
     # install yarn.
-    && npm install -g yarn \
+    # && sudo npm install -g yarn \
+    && curl -L --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" > /tmp/yarn.tar.gz \ 
+    && sudo tar -xzf /tmp/yarn.tar.gz -C /opt && \
+    sudo ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn && \
+    sudo ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg && \
+    sudo rm /tmp/yarn.tar.gz \
+    # && npm install --global yarn \
     # install Rails.
     && gem install nokogiri -v ${NOKOGIRI_VERSION} \
     && gem install rails -v ${RAILS_VERSION} \
