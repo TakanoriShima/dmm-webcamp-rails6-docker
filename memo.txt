@@ -41,4 +41,6 @@ bundle install
 rm -rf config/credentials.yml.enc
 EDITOR=vim bin/rails credentials:edit
 rails db:migrate
+rails webpacker:install
+rails webpacker:compile
 rails s -p 80
