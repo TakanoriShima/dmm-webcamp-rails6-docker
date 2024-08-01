@@ -1,0 +1,21 @@
+DMM rails
+
+---
+docker compose up -d
+  アタッチ
+
+## アプリ
+git clone https://github.com/TakanoriShima/MyPortfolio2.git
+cd MyPortfolio2/
+bundle install
+rails db:create
+rails db:migrate
+
+yarn add @babel/plugin-transform-private-property-in-object @babel/plugin-transform-private-property-in-object
+rails webpacker:compile
+rails server -b 0.0.0.0
+OK
+
+
+
+
