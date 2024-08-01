@@ -1,7 +1,12 @@
-DMM rails
+# DMM rails
 
+git clone https://github.com/TakanoriShima/dmm-webcamp-rails6-docker.git
 ---
+VSCode起動
+フォルダを .git がある場所で起動
+ターミナルで
 docker compose up -d
+
   アタッチ
 
 ## アプリ
