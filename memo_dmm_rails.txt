@@ -21,6 +21,6 @@ rails server -b 0.0.0.0
 
 -- Docker reset
 docker-compose down --rmi all --volumes
-docker-compose down --rmi all --volumes
+docker system prune -a --volumes
 y
 
