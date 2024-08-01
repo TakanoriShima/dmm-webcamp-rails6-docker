@@ -1,0 +1,26 @@
+# Docker 環境のダウンロードと VSCodeのターミナルでのコマンド
+git clone https://github.com/TakanoriShima/dmm-webcamp-rails6-docker.git
+cd .\dmm-webcamp-rails6-docker\
+docker compose up -d
+
+# for Rails
+
+Dockerコンテナにアタッチ
+
+## アプリ
+git clone https://github.com/TakanoriShima/MyPortfolio2.git meshiterro
+cd meshiterro/
+bundle install
+rails db:create
+rails db:migrate
+
+yarn add @babel/plugin-transform-private-property-in-object @babel/plugin-transform-private-property-in-object
+rails webpacker:compile
+rails server -b 0.0.0.0
+ブラウザで開く = OK
+
+-- Docker reset
+docker-compose down --rmi all --volumes
+docker-compose down --rmi all --volumes
+y
+
