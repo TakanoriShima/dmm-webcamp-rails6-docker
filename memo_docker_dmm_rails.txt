@@ -16,11 +16,13 @@ rails db:migrate
 
 yarn add @babel/plugin-transform-private-property-in-object @babel/plugin-transform-private-property-in-object
 rails webpacker:compile
-rails server -b 0.0.0.0
+# rails server -b 0.0.0.0
+rails s
+
 ブラウザで開く = OK
+http://127.0.0.1:3000
 
 -- Docker reset
 docker-compose down --rmi all --volumes
 docker system prune -a --volumes
 y
-
